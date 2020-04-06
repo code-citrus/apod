@@ -1,0 +1,22 @@
+{
+  "name": "apod",
+  "version": "1.0.0",
+  "description": "An astronomy picture of the day front-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-citrus/apod.git"
+  },
+  "keywords": [
+    "NASA"
+  ],
+  "author": "Gautham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/code-citrus/apod/issues"
+  },
+  "homepage": "https://github.com/code-citrus/apod#readme"
+}
