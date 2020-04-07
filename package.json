@@ -4,7 +4,11 @@
   "description": "An astronomy picture of the day front-end",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "npm run css",
+    "start": "concurrently \"npm run css:watch\" \"npm run js:watch\"",
+    "css": "node-sass ./scss --o ./dist/styles",
+    "css:watch": "npm run css && node-sass ./scss -wo dist",
+    "js:watch": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
@@ -18,5 +22,14 @@
   "bugs": {
     "url": "https://github.com/code-citrus/apod/issues"
   },
-  "homepage": "https://github.com/code-citrus/apod#readme"
+  "homepage": "https://github.com/code-citrus/apod#readme",
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "copyfiles": "^2.2.0",
+    "file-loader": "^6.0.0",
+    "node-sass": "^4.13.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
 }
