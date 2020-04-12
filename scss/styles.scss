@@ -1,0 +1,53 @@
+html, body, figure {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+figure {
+  background-color: #0C0C0C;
+  color: white;
+  display: flex;
+  height: 100vh;
+  overflow-y: hidden;
+
+  img {
+    display: block;
+    height: 100vh;
+    width: auto;
+  }
+
+  .container {
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding: 3rem;
+    position: relative;
+
+    figcaption {
+      max-width: 500px;
+      text-align: left;
+      color: #707070;
+      font-size: 1.2rem;
+      line-height: 2.4rem;
+    }
+
+    nav {
+      position: fixed;
+      margin: 0 -3rem;
+      padding: 0 3rem;
+      min-height: 64px;
+      width: 100%;
+      bottom: 0;
+      z-index: 1;
+      background-color: #0C0C0C;
+
+      line-height: 64px;
+    }
+
+  }
+
+  /* Hide scrollbar on chrome, safari, opera */
+  .container::-webkit-scrollbar {
+    display: none;
+  }
+}
