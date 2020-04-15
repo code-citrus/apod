@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <title>Astronomy Picture of the Day</title>
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <figure>
     <img src="./saturn.jpg">
-    <div class="container">
-      <figcaption>
+    <div class="sidebar">
+      <figcaption id="caption" class="sidebar-expanded">
         What creates Saturn's colors? The featured picture of Saturn only slightly exaggerates what a human would see if
         hovering close to the giant ringed world. The image was taken in 2005 by the robot Cassini spacecraft that orbited
         Saturn from 2004 to 2017. Here Saturn's majestic rings appear directly only as a curved line, appearing brown, in
@@ -25,7 +26,7 @@
         It
         is also not known why some of Saturn's clouds are colored gold. Activities: NASA Science at Home
       </figcaption>
-      <nav>
+      <nav id="expanded-nav" class="sidebar-expanded">
         <a href="#">prev</a>&nbsp;<a href="#">next</a>
       </nav>
     </div>

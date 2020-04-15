@@ -1,5 +1,3 @@
-import '../apod.html';
-
 (function() {
   var APOD_URL = 'https://api.nasa.gov/planetary/apod';
   var API_KEY = 'H2M20c7MB1DTGzdREfIrCGBQY2hH6NaLjZ2uKatj';

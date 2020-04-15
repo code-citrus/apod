@@ -18,6 +18,7 @@ module.exports = {
 
   module: {
     rules: [
+      
       {
         test: /\.html/,
         use: [
@@ -26,6 +27,16 @@ module.exports = {
             options: {
               name: 'index.[ext]'
             }
+          }
+        ]
+      },
+
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: { name: '[name].[ext]' }
           }
         ]
       }
