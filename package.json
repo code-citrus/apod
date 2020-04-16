@@ -7,7 +7,7 @@
     "prestart": "npm run css",
     "start": "concurrently \"npm run css:watch\" \"npm run js:watch\"",
     "css": "node-sass ./scss --o ./dist/styles",
-    "css:watch": "npm run css && node-sass ./scss -wo dist",
+    "css:watch": "npm run css && node-sass ./scss -wo dist/styles",
     "js:watch": "webpack-dev-server --open"
   },
   "repository": {
@@ -31,5 +31,8 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0"
   }
 }

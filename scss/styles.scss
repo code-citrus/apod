@@ -4,18 +4,28 @@ html, body, figure {
   margin: 0;
 }
 
-@mixin collapsed-sidebar() {
+/* By default, the sidebar is collapsed */
+@mixin default-sidebar() {
   padding: 0;
-  min-width: 3rem;
+  min-width: 5rem;
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
   
   .sidebar-expanded {
     display: none;
   }
 }
 
+/* Expanded sidebar is applied inside media query or via script */
 @mixin expanded-sidebar {
   padding: 3rem;
   min-width: 350px;
+  display: block;
+
+  .sidebar-collapsed {
+    display: none;
+  }
 
   .sidebar-expanded {
     display: block;
@@ -44,12 +54,18 @@ figure {
     flex-grow: 1;
     overflow-y: scroll;
     position: relative;
-
-    @include collapsed-sidebar;
+    transition: min-width 2s;
+    
+    @include default-sidebar;
     
     @media(min-width: 700px) {
       @include expanded-sidebar;
     }
+  }
+
+  /* On small screens only, the "expanded" class allows JS to expand sidebar */
+  .sidebar.expanded {
+    @include expanded-sidebar;
   }
 
   /* Hide scrollbar on chrome, safari, opera */
@@ -77,4 +93,12 @@ figure {
   z-index: 1;
   background-color: #0C0C0C;
   line-height: 64px;
+}
+
+#collapsed-nav {
+  font-size: 2.5rem;
+}
+
+.collapsed-sidebar-item {
+  padding: 15px;
 }
