@@ -4,6 +4,7 @@
   "description": "An astronomy picture of the day front-end",
   "main": "index.js",
   "scripts": {
+    "build": "npm run css && webpack",
     "prestart": "npm run css",
     "start": "concurrently \"npm run css:watch\" \"npm run js:watch\"",
     "css": "node-sass ./scss --o ./dist/styles",
