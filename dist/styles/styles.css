@@ -1,0 +1,84 @@
+html, body, figure {
+  padding: 0;
+  border: 0;
+  margin: 0; }
+
+/* By default, the sidebar is collapsed */
+/* Expanded sidebar is applied inside media query or via script */
+.d-flex {
+  display: flex; }
+
+.flex-col {
+  flex-direction: column; }
+
+figure {
+  background-color: #0C0C0C;
+  color: white;
+  display: flex;
+  height: 100vh;
+  overflow-y: hidden;
+  /* On small screens only, the "expanded" class allows JS to expand sidebar */
+  /* Hide scrollbar on chrome, safari, opera */ }
+  figure img {
+    display: block;
+    height: 100vh;
+    width: auto;
+    min-width: 0;
+    /* allow flex-shrink */
+    object-fit: cover; }
+  figure .sidebar {
+    flex-grow: 1;
+    overflow-y: scroll;
+    position: relative;
+    transition: min-width 2s;
+    padding: 0;
+    min-width: 5rem;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center; }
+    figure .sidebar .sidebar-expanded {
+      display: none; }
+    @media (min-width: 700px) {
+      figure .sidebar {
+        padding: 3rem;
+        min-width: 350px;
+        display: block; }
+        figure .sidebar .sidebar-collapsed {
+          display: none; }
+        figure .sidebar .sidebar-expanded {
+          display: block; } }
+  figure .sidebar.expanded {
+    padding: 3rem;
+    min-width: 350px;
+    display: block; }
+    figure .sidebar.expanded .sidebar-collapsed {
+      display: none; }
+    figure .sidebar.expanded .sidebar-expanded {
+      display: block; }
+  figure .sidebar::-webkit-scrollbar {
+    display: none; }
+
+/* Only displayed on expanded sidebar */
+#caption {
+  max-width: 500px;
+  text-align: left;
+  color: #707070;
+  font-size: 1.2rem;
+  line-height: 2.4rem; }
+
+#expanded-nav {
+  position: fixed;
+  margin: 0 -3rem;
+  padding: 0 3rem;
+  min-height: 64px;
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
+  background-color: #0C0C0C;
+  line-height: 64px; }
+
+#collapsed-nav {
+  font-size: 2.5rem; }
+
+.collapsed-sidebar-item {
+  padding: 15px; }
