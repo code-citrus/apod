@@ -4,12 +4,13 @@
   "description": "An astronomy picture of the day front-end",
   "main": "index.js",
   "scripts": {
-    "build": "npm run css && webpack",
+    "build": "npm run vendor:fa && npm run css && webpack",
     "prestart": "npm run css",
     "start": "concurrently \"npm run css:watch\" \"npm run js:watch\"",
     "css": "node-sass ./scss --o ./dist/styles",
     "css:watch": "npm run css && node-sass ./scss -wo dist/styles",
-    "js:watch": "webpack-dev-server --open"
+    "js:watch": "webpack-dev-server --open",
+    "vendor:fa": "copyfiles ./node_modules/@fortawesome/fontawesome-free/**/*.* ./dist -u 2"
   },
   "repository": {
     "type": "git",
