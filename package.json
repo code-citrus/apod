@@ -4,7 +4,7 @@
   "description": "An astronomy picture of the day front-end",
   "main": "index.js",
   "scripts": {
-    "build": "npm run vendor:fa && npm run css && webpack",
+    "build": "validate-html apod.html && npm run vendor:fa && npm run css && webpack",
     "prestart": "npm run css",
     "start": "concurrently \"npm run css:watch\" \"npm run js:watch\"",
     "css": "node-sass ./scss --o ./dist/styles",
@@ -30,6 +30,7 @@
     "copyfiles": "^2.2.0",
     "file-loader": "^6.0.0",
     "node-sass": "^4.13.1",
+    "vnu-jar": "^20.3.16",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"

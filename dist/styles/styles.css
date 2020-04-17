@@ -25,7 +25,8 @@ figure {
     width: auto;
     min-width: 0;
     /* allow flex-shrink */
-    object-fit: cover; }
+    object-fit: cover;
+    z-index: 2; }
   figure .sidebar {
     flex-grow: 1;
     overflow-y: scroll;
@@ -68,11 +69,12 @@ figure {
 
 #expanded-nav {
   position: fixed;
-  margin: 0 -3rem;
-  padding: 0 3rem;
-  min-height: 64px;
-  width: 100%;
+  right: 0;
   bottom: 0;
+  width: 100vw;
+  /* TODO: Fix this hacky soln, which dpeends on img z = 2  && text-align right*/
+  text-align: right;
+  padding-right: 3rem;
   z-index: 1;
   background-color: #0C0C0C;
   line-height: 64px; }

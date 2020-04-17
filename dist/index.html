@@ -10,9 +10,9 @@
 </head>
 <body>
   <figure>
-    <img id="apod-image" src="./saturn.jpg">
+    <img id="apod-image" src="./saturn.jpg" alt="NASA Astronomy Picture of the Day - see caption">
     <div id="sidebar" class="sidebar">
-      <figcaption id="caption" class="sidebar-expanded">
+      <div id="caption" class="sidebar-expanded">
         What creates Saturn's colors? The featured picture of Saturn only slightly exaggerates what a human would see if
         hovering close to the giant ringed world. The image was taken in 2005 by the robot Cassini spacecraft that orbited
         Saturn from 2004 to 2017. Here Saturn's majestic rings appear directly only as a curved line, appearing brown, in
@@ -27,7 +27,7 @@
         not known why southern Saturn does not show the same blue hue -- one hypothesis holds that clouds are higher there.
         It
         is also not known why some of Saturn's clouds are colored gold. Activities: NASA Science at Home
-      </figcaption>
+      </div>
       <nav id="collapsed-nav" class="sidebar-collapsed">
         <div class="collapsed-sidebar-item">
             <i class="fas fa-chevron-left"></i>
@@ -48,7 +48,7 @@
     const sidebar = document.getElementById('sidebar');
     const expander = document.getElementById('btn-info');
     expander.addEventListener('click', () => {
-      sidebar.classList.add('expanded');
+      sidebar.classList.toggle('expanded');
     });
   </script>
 </body>
