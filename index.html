@@ -29,25 +29,25 @@
         is also not known why some of Saturn's clouds are colored gold. Activities: NASA Science at Home
       </div>
       <nav id="collapsed-nav" class="sidebar-collapsed">
-        <div class="collapsed-sidebar-item">
-            <i class="fas fa-chevron-left"></i>
-        </div>
-        <div class="collapsed-sidebar-item">
-          <i class="fas fa-chevron-left"></i>
-        </div>
         <div id="btn-info" class="collapsed-sidebar-item">
           <i class="fas fa-info"></i>
         </div>
       </nav>
       <nav id="expanded-nav" class="sidebar-expanded">
-        <a href="#">prev</a>&nbsp;<a href="#">next</a>
+        <div id="btn-collapse-info">
+          <i class="fas fa-arrow-right"></i>
+        </div>
       </nav>
     </div>
   </figure>
   <script>
     const sidebar = document.getElementById('sidebar');
     const expander = document.getElementById('btn-info');
+    const collapser = document.getElementById('btn-collapse-info');
     expander.addEventListener('click', () => {
+      sidebar.classList.toggle('expanded');
+    });
+    collapser.addEventListener('click', () => {
       sidebar.classList.toggle('expanded');
     });
   </script>
