@@ -59,6 +59,10 @@ figure {
   figure .sidebar::-webkit-scrollbar {
     display: none; }
 
+@media (min-width: 700px) {
+  .xs-only {
+    display: none; } }
+
 /* Only displayed on expanded sidebar */
 #caption {
   max-width: 500px;

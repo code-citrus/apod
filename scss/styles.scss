@@ -33,6 +33,7 @@ html, body, figure {
 }
 
 .d-flex { display: flex; }
+
 .flex-col { flex-direction: column; }
 
 figure {
@@ -71,6 +72,12 @@ figure {
 
   /* Hide scrollbar on chrome, safari, opera */
   .sidebar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.xs-only {
+  @media(min-width: 700px) {
     display: none;
   }
 }
