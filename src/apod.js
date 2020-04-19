@@ -22,10 +22,14 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     callAPOD.then((json) => {
-      var image = document.getElementById('apod-image');
-      image.src = json.url;
+      var image = new Image();
+      var oldImage = document.getElementById('apod-image');
       var paragraph = document.getElementById('caption');
-      paragraph.textContent = json.explanation;
+      image.src = json.url;
+      image.onload = () => {
+        image.replaceWith(image);
+        paragraph.textContent = json.explanation;
+      };
     });
   });
 })();
